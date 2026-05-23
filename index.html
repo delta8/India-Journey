@@ -643,20 +643,49 @@ addM(null,         [27.587,85.261],  pin(C.sacred,18), pop('Asura Cave · Yangle
 addM(null,         [27.721,85.362],  pin(C.sacred,16), pop('Boudhanath Stupa','day trip','Tibetan hub · phurba sourcing'));
 
 // ── Routes ────────────────────────────────────────────────
-const flt  = {color:'rgba(144,202,249,0.4)',weight:1.5,dashArray:'5 7'};
-const faint= {color:'rgba(144,202,249,0.22)',weight:1.2,dashArray:'4 8'};
-const road = {color:'rgba(201,168,108,0.7)', weight:2.5};
-const spur = {color:'rgba(201,168,108,0.45)',weight:1.8,dashArray:'3 5'};
+// Each flight leg its own color
+const road  = {color:'rgba(201,168,108,0.7)', weight:2.5};
+const spur  = {color:'rgba(201,168,108,0.45)',weight:1.8,dashArray:'3 5'};
 
-L.polyline([[35.877,-78.787],[37,-100],[37.619,-122.374]],flt).addTo(map);
-L.polyline([[37.619,-122.374],[55,-40],[51.477,-0.461]],flt).addTo(map);
-L.polyline([[51.477,-0.461],[42,30],[28.556,77.100]],flt).addTo(map);
-L.polyline([[28.556,77.100],[29.6,77.0],[30.672,76.785]],{...flt,weight:1,dashArray:'2 5'}).addTo(map);
-L.polyline([[28.556,77.100],[48,50],[60.319,24.963]],flt).addTo(map);
-L.polyline([[60.319,24.963],[65,-25],[40.641,-73.778]],flt).addTo(map);
-L.polyline([[40.641,-73.778],[38,-77],[35.877,-78.787]],flt).addTo(map);
-L.polyline([[34.166,77.581],[31,81.5],[27.700,85.318]],faint).addTo(map);
-L.polyline([[27.700,85.318],[28,81.5],[28.556,77.100]],faint).addTo(map);
+function flt(color, faint=false) {
+    return {color, weight: faint ? 1.2 : 1.6, dashArray: faint ? '3 8' : '5 7', opacity: faint ? 0.5 : 1};
+}
+
+// RDU → SFO  — soft coral
+L.polyline([[35.877,-78.787],[37,-100],[37.619,-122.374]],
+    flt('rgba(255,160,130,0.7)')).addTo(map);
+
+// SFO → LHR  — lavender
+L.polyline([[37.619,-122.374],[55,-40],[51.477,-0.461]],
+    flt('rgba(195,160,240,0.75)')).addTo(map);
+
+// LHR → DEL  — sky blue
+L.polyline([[51.477,-0.461],[42,30],[28.556,77.100]],
+    flt('rgba(100,195,255,0.75)')).addTo(map);
+
+// DEL → Chandigarh  — pale gold (domestic, subtle)
+L.polyline([[28.556,77.100],[29.6,77.0],[30.672,76.785]],
+    {...flt('rgba(220,195,120,0.55)'), weight:1, dashArray:'2 5'}).addTo(map);
+
+// DEL → HEL (return)  — warm amber
+L.polyline([[28.556,77.100],[48,50],[60.319,24.963]],
+    flt('rgba(255,195,80,0.75)')).addTo(map);
+
+// HEL → JFK  — mint green
+L.polyline([[60.319,24.963],[65,-25],[40.641,-73.778]],
+    flt('rgba(120,220,180,0.75)')).addTo(map);
+
+// JFK → RDU  — rose pink
+L.polyline([[40.641,-73.778],[38,-77],[35.877,-78.787]],
+    flt('rgba(255,140,170,0.7)')).addTo(map);
+
+// Leh → KTM  — teal (to book, faint)
+L.polyline([[34.166,77.581],[31,81.5],[27.700,85.318]],
+    flt('rgba(80,210,200,0.45)', true)).addTo(map);
+
+// KTM → DEL  — lilac (to book, faint)
+L.polyline([[27.700,85.318],[28,81.5],[28.556,77.100]],
+    flt('rgba(200,160,220,0.45)', true)).addTo(map);
 
 L.polyline([[30.672,76.785],[31.638,76.931]],spur).addTo(map);
 L.polyline([
@@ -669,7 +698,7 @@ L.polyline([[34.166,77.581],[34.270,76.777]],spur).addTo(map);
 L.polyline([[27.700,85.318],[27.591,85.258]],spur).addTo(map);
 L.polyline([[27.591,85.258],[27.721,85.362]],{...spur,dashArray:'2 5',weight:1.4}).addTo(map);
 
-map.fitBounds([[27.4,74],[35.5,88]],{padding:[40,40]});
+map.setView([30, 20], 2);
 
 // ── Focus on map function ─────────────────────────────────
 function focusMap(latlng, zoom, markerKey) {
