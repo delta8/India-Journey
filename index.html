@@ -300,13 +300,30 @@
             </div>
         </div>
 
-        <!-- 2: Bay Area -->
+        <!-- 2: Siyan -->
         <div class="tl-item">
             <div class="tl-dot retreat">⌂</div>
             <div class="tl-body">
-                <div class="tl-top"><div class="tl-name">Berkeley · Siyan</div><div class="tl-date">jun 13–16</div></div>
-                <div class="tl-meta">Friend's home · 3 nights · Berkeley<br>Pick up Turo Tesla Model S at SFO · Jun 15 8pm</div>
-                <button class="focus-btn" onclick="focusMap([37.871,-122.273],13,'siyan')"><span class="icon">◎</span> focus on map</button>
+                <div class="tl-top"><div class="tl-name">Albany · Siyan</div><div class="tl-date">jun 13–16</div></div>
+                <div class="tl-meta">427 Talbot Ave · Albany CA · 3 nights<br>Pick up Turo Tesla Model S at SFO · Jun 15 8pm</div>
+                <button class="focus-btn" onclick="focusMap([37.887,-122.298],14,'siyan')"><span class="icon">◎</span> focus on map</button>
+            </div>
+        </div>
+
+        <!-- 2b: NTMC -->
+        <div class="tl-item">
+            <div class="tl-dot sacred">◈</div>
+            <div class="tl-body">
+                <div class="tl-top"><div class="tl-name">Nyingma Tibetan Meditation Center</div><div class="tl-date">sun jun 14 · morning</div></div>
+                <div class="tl-meta">
+                    1815 Highland Place · Berkeley · Tarthang Tulku Rinpoche<br>
+                    Founded 1969 · first Tibetan Buddhist center in the West · Nyingma lineage
+                </div>
+                <div class="sites-grid">
+                    <div class="site-card"><div class="s-name">Crystal Mirror series</div><div class="s-note">Tarthang Tulku's landmark publication on Nyingma lineage history · found in used bookstore</div></div>
+                    <div class="site-card"><div class="s-name">Odiyan connection</div><div class="s-note">Sister center on Sonoma coast · Nyingma mandala active in Northern California</div></div>
+                </div>
+                <button class="focus-btn" onclick="focusMap([37.877,-122.257],15,'ntmc')"><span class="icon">◎</span> focus on map</button>
             </div>
         </div>
 
@@ -634,7 +651,8 @@ function addM(key, latlng, icon, popupHtml) {
 }
 
 addM('rdu',        [35.877,-78.787], pin(C.flight),    pop('RDU · Raleigh-Durham','Jun 13 & Jul 17','Home airport'));
-addM('siyan',      [37.871,-122.273],pin(C.retreat),   pop('Berkeley · Siyan','Jun 13–16',"Friend's home · 2 nights"));
+addM('siyan',      [37.887,-122.298],pin(C.retreat,20),pop('Albany · Siyan','Jun 13–16','427 Talbot Ave · Albany CA · 3 nights'));
+addM('ntmc',       [37.877,-122.257],pin(C.sacred,18), pop('Nyingma Tibetan Meditation Center','Jun 14 morning','1815 Highland Place · Berkeley · Tarthang Tulku · founded 1969 · first Tibetan Buddhist center in the West · Crystal Mirror publication'));
 addM('sfo',        [37.619,-122.374],pin(C.flight,20), pop('SFO · San Francisco','Jun 13–23','Spirit Camp nearby · VS dep Jun 23 23:15',true));
 addM('santarosa',  [39.300,-123.800],pin(C.retreat),   pop('Spirit Camp Venue · Mendocino','Jun 16–23','7-day retreat with Mira et al'));
 addM('lhr',        [51.477,-0.461],  pin(C.flight),    pop('London Heathrow · LHR','Jun 24','Virgin Atlantic connection · D7NBWP',true));
