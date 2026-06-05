@@ -58,6 +58,25 @@
             margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid var(--border);
         }
 
+        /* Commentary box */
+        .commentary {
+            background:var(--bg-card);
+            border:1px solid var(--border);
+            border-radius:4px;
+            padding:14px 18px;
+            margin-bottom:30px;
+            font-size:.88em;
+            line-height:1.8;
+            color:var(--muted);
+            border-left:2px solid var(--gold-dim);
+        }
+        .commentary .comm-title {
+            font-family:var(--font-head);
+            font-size:.95em;
+            color:var(--sand);
+            margin-bottom:6px;
+        }
+
         /* ── MAP ── */
         .map-panel {
             background:var(--bg-card);
@@ -271,6 +290,12 @@
         <div class="pill"><span class="pill-val">~580km</span><span class="pill-lbl">overland manali→leh</span></div>
     </div>
 
+    <!-- OPENING COMMENTARY -->
+    <div class="commentary">
+        <div class="comm-title">pilgrimage orientation</div>
+        <p>This yatra traces Padmasambhava's footsteps across sacred landscapes that predate his arrival. Each site carries layered significance: naga sanctuaries and Hindu austerity grounds later consecrated through Vajrayana practice. Tso Pema (born of Rishi Lomas's penance to Shiva) and Pharping (marked by the hood of naga king Shesha) were already sacred before the 8th-century master arrived. The pilgrimage itself—35 days, five high passes, deliberate difficulty as practice—embodies dzogchen principles: empty, loose, natural.</p>
+    </div>
+
     <!-- MAP — sticky at top -->
     <div class="section-label">interactive map · click pins · scroll to explore</div>
     <div class="map-panel" id="map-panel">
@@ -342,7 +367,7 @@
             </div>
         </div>
 
-                <!-- 3: Spirit Camp -->
+        <!-- 3: Spirit Camp -->
         <div class="tl-item">
             <div class="tl-dot retreat">◎</div>
             <div class="tl-body">
@@ -408,6 +433,14 @@
                     <div class="site-card"><div class="s-name">Sacred Lake (Rewalsar)</div><div class="s-note">Circumambulation · lakeside monasteries</div></div>
                 </div>
                 <button class="focus-btn" onclick="focusMap([31.638,76.931],12,'tsopema')"><span class="icon">◎</span> focus on map</button>
+            </div>
+        </div>
+
+        <!-- COMMENTARY: Tso Pema layering -->
+        <div style="padding:0 16px; margin:16px 0 0 34px;">
+            <div class="commentary" style="margin-bottom:16px;">
+                <div class="comm-title">tso pema: layered sacred geography</div>
+                <p>The lake itself predates Padmasambhava by centuries. In Hindu tradition, Rishi Lomas (Lomasha Rishi) performed intense austerities to Shiva on these banks, his tapas so powerful it manifested a spring—the lake emerged as Shiva's gift. Later, in the 8th century, Padmasambhava and Mandarava's practice re-consecrated the site. The floating reed islands (phragmites) are understood as manifestations of the guru's continued presence. Walk kora around the lake—your circumambulation moves through both layers simultaneously, the naga and the Buddhist both present in the water and stone.</p>
             </div>
         </div>
 
@@ -511,6 +544,14 @@
             </div>
         </div>
 
+        <!-- COMMENTARY: Lamayuru & Naropa -->
+        <div style="padding:0 16px; margin:16px 0 0 34px;">
+            <div class="commentary" style="margin-bottom:16px;">
+                <div class="comm-title">lamayuru: bon → six yogas lineage holder</div>
+                <p>Lamayuru, the "Eternal Monastery," stands on what was originally sacred Bon ground—pre-Buddhist Tibetan shamanic territory. In the 11th century, Naropa (one of the 84 Mahasiddhas and former head scholar of Nalanda) arrived. According to legend, he found the site submerged under a lake; his realization was so powerful it caused the hillside to split and the waters to drain. When the lake emptied, a dead lion appeared—Naropa built the first temple, Singhe Ghang (Lion Mound), upon that sacred spot. The Bon layer was not destroyed but integrated. Naropa's significance extends beyond his meditation here: he received the Six Yogas from Tilopa and transmitted them forward, making Lamayuru not just a retreat site but a transmission point for the entire Kagyu lineage's most advanced practices—Tummo, Illusory Body, Clear Light. His cave, preserved in the main assembly hall, holds the presence of both the scholar who rejected theoretical knowledge and the adept who embodied its fruition.</p>
+            </div>
+        </div>
+
         <!-- 12: Dalai Lama teachings -->
         <div class="tl-item">
             <div class="tl-dot retreat">◎</div>
@@ -548,7 +589,7 @@
             </div>
         </div>
 
-                <!-- 14: Pharping -->
+        <!-- 14: Pharping -->
         <div class="tl-item">
             <div class="tl-dot lodge">⌂</div>
             <div class="tl-body">
@@ -564,6 +605,13 @@
             </div>
         </div>
 
+        <!-- COMMENTARY: Pharping layering -->
+        <div style="padding:0 16px; margin:16px 0 0 34px;">
+            <div class="commentary" style="margin-bottom:16px;">
+                <div class="comm-title">pharping: naga sanctuary → mahamudra siddhi site</div>
+                <p>Pharping's name derives from "Phanathingu"—the nine hoods of the naga king Lhakmachen (or Shesha), marking this as sacred naga ground long before Buddhism. Hindu pilgrims worship a sacred spring as the site of Vishnu's presence. In the 8th century, Padmasambhava engaged in intensive retreat here, alternating between Asura Cave (winters) and Yangleshö Cave (summers), practicing Yangdak Heruka and Vajrakilaya with consort Shakyadevi. His attainment of Mahamudra siddhi at Pharping is revered as equivalent to Buddha's enlightenment at Bodh Gaya for Vajrayana practitioners. The naga and the Buddhist coexist in the landscape—Hindu shrines stand alongside Buddhist monasteries, the water still sacred to both.</p>
+            </div>
+        </div>
 
         <!-- Delhi: Dharma Statues + buffer -->
         <div class="tl-item">
@@ -583,7 +631,7 @@
             </div>
         </div>
 
-                <!-- 15: Return -->
+        <!-- 15: Return -->
         <div class="tl-item">
             <div class="tl-dot flight">✈</div>
             <div class="tl-body">
